@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  slave: MyText
+  image1_uid: MyString
+  image1_name: MyString
+  image2_uid: MyString
+  image2_name: MyString
+  url: MyString
+  sort: 1
+
+two:
+  title: MyString
+  description: MyText
+  slave: MyText
+  image1_uid: MyString
+  image1_name: MyString
+  image2_uid: MyString
+  image2_name: MyString
+  url: MyString
+  sort: 1

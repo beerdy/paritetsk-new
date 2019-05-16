@@ -1,0 +1,135 @@
+<%= render partial: 'application/header', locals: {back: false}%>
+<section class="uslugi" id="uslugi">
+	<div class="content">
+		<h2>КАТАЛОГ УСЛУГ</h2>
+		<p>Мы реализуем весь спектр услуг: от предоставления качественных пиломатериалов до разработки и создания готового проекта (будь то коттедж, баня, бассейн) </p>
+		<div class="iteams">
+			<div class="iteam">
+				<div class="img">
+					<div class="ico arbor"></div>
+					<div class="price">от 300 000руб.</div>
+					<img src="/assets/arbor.jpg"/>
+				</div>
+				<div class="title">Строительство</div>
+			</div>
+			<div class="iteam">
+				<div class="img">
+					<div class="ico roof"></div>
+					<div class="price">от 7 000руб.</div>
+					<img src="/assets/roof.jpg"/>
+				</div>
+				<div class="title">Кровля</div>
+			</div>
+			<div class="iteam">
+				<div class="img">
+					<div class="ico plank"></div>
+					<div class="price">от 10руб.</div>
+					<img src="/assets/plank.jpg"/>
+				</div>
+				<div class="title">Пиломатериалы</div>
+			</div>
+		</div>
+		<a href="/pages/catalog" class="buttonA">Подробнее</a>
+	</div>
+</section>
+
+<section class="about" id="about">
+	<div class="content">
+		<div class="left">
+			<img src="/assets/about2.jpg"/>
+		</div>
+		<div class="right">
+			<h2>Немного о нас</h2>
+			<p>Производим качественный пиломатериал из Владимирского леса. Реализуем доску, брус. Предлагаем пиломатериал для стропил, чернового пола, потолка ,обрешетки, рейку. Все размеры в наличии и под заказ.</p>
+			<p>Доставка по городу и области, а так же смежным областям. Работаем оптом и в розницу. Наличный и безналичный расчет. Скидка постоянным клиентам.</p>
+			<p>Каждый работник нашей компании имеет внушительный стаж. Мы гарантируем качество своей работы - мы любим то что делаем. Всегда достигаем пожеланий заказчика. Заказывая продукцию именно у нас - Знайте Вы поручаете ее изготовление не только ответственным, пунктуальным, знающим своё дело людям, но и прежде всего людям, ценящим каждого своего клиента в не зависимости от местоположения клиента! Изготовим и доставим в кратчайшие строки</p>
+			<a href="/pages/about" class="buttonB">Подробнее</a>
+			<div class="links">
+				<% Content.all.each do |content| %>
+			      <%= link_to content.title, content, class: "link" %></td>
+			    <% end %>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="why">
+	<div class="content">
+		<h2>Почему мы?</h2>
+		<p>Находясь на рынке не 1 год, мы знаем как подойти к реализации того или иного проекта. А комплексный подход и наличие собственного склада позволяет нам сократить затраченное время на реализацию, подходить к поставленным целям с учетом качества и сократить расходы клиента до необходимого минимума!</p>
+		<div class="iteams">
+			<div class="iteam why">
+				<div class="img">
+					<div class="ico price"></div>
+				</div>
+				<div class="title yellow">Цена</div>
+				<div class="desc">Все только по прайс-листам. Без накрутки и переплат.</div>
+			</div>
+			<div class="iteam why">
+				<div class="img">
+					<div class="ico time"></div>
+				</div>
+				<div class="title yellow">Время</div>
+				<div class="desc">Мы умеем оценивать собственные силы и всегда придерживаемся выставленных сроков.</div>
+			</div>
+			<div class="iteam why">
+				<div class="img">
+					<div class="ico like"></div>
+				</div>
+				<div class="title yellow">Качество</div>
+				<div class="desc">Мы работаем только с качественной древесиной прозводства Владимирский лес.</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="projects" id="projects">
+	<div class="content">
+		<h2>Наши проекты</h2>
+		<p>Мы подобрали несколько интересных, реализованных нами проектов. Быть может следующим проектом здесь будет именно ваш...</p>
+		<% Category.where(id:[1,2]).each do |category| %>
+		  <div class="iteams">
+		    <% category.galleries.limit(3).each do |gallery| %>
+		    <div class="iteam">
+		    	<div class="img">
+					<div class="ico arbor"></div>
+					<%= image_tag gallery.image.url %>
+				</div>
+				<div class="title"><%= gallery.title %></div>
+		    </div>
+		    <% end %>
+		  </div>
+		<% end %>
+		<a href="/pages/works" class="buttonB">Все проекты</a>
+	</div>
+</section>
+
+<section class="yotube" id="youtube">
+	<div class="content">
+		<h2>Мы на Youtube! Подписывайтесь</h2>
+		<div class="left">
+			<iframe width="100%" height="300" src="https://www.youtube.com/embed/EgwzX2y1n_4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="right">
+			<p>Уважаемые посетители сайта компании ПАРИТЕТСК. Рады сообщить Вам, что запускаем собственный канала на YouTube!</p>
+
+			<p>Вы сможете посмотреть строительство в Липецке. Почерпнуть полезные моменты. И если проживаете непосредственно в регионе Липецкая область - проехать на возведенные объекты и оценить качество построенных беседок, помещений, домов. Посмотреть на готовые работы ПАРИТЕТСК - каркасные дома, дома из бруса, или дома имеющие в основе клеенный брус</p>
+
+			<p>Сотрудники строительной компании ПАРИТЕТСК ответят на ваши вопросы в комментариях под каждым видео. Бесплатно проконсультируют какие пиломатериалы и строительные материалы использовать</p>
+			<a href="https://www.youtube.com/channel/UC8euwpzQmrRGMKHE9iJsq_g" class="buttonA">Подписаться</a>
+		</div>
+	</div>
+</section>
+
+<section class="contacts" id="contacts">
+	<div class="content">
+		<h2>Контакты</h2>
+		<p>Пишите, звоните, приходите! Ответим на все интересующие Вас вопросы.</p>
+		<p class="adress">г. Липецк, ул. Сибирская, 34</p>
+		<p class="phone"><span>+7 (4742)</span> 712-855 /  <span>+7 (4742)</span> 716-791</p>
+		<p class="mail">kompac.00@mail.ru</p>
+		<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A627692118b5cd59b34099f0d84149fcd1efaa0f993f9ce0d948ed4a587eba1b3&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+	</div>
+</section>
+
+<%= render partial: 'application/footer', locals: {back: false}%>

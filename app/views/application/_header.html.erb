@@ -1,0 +1,57 @@
+<script>
+function pageTo(page){
+	var p = $("#"+page);
+	var offset = p.offset();
+	console.log(offset.top);
+	$("html, body").animate({
+	        scrollTop: offset.top+"px"
+	    }, 1000);
+
+	return false;
+}
+
+$(window).scroll(function(){
+      if ($(this).scrollTop() > 50) {
+          $('.generalMenu').addClass('fixed');
+      } else {
+          $('.generalMenu').removeClass('fixed');
+      }
+});
+
+$(document).ready(function(){
+	$("section").addClass('hidden').viewportChecker({
+	    classToAdd: 'visible animated fadeInUp', 
+
+	    removeClassAfterAnimation: false, // Remove added classes after animation has finished
+	    offset: 10, // The offset of the elements (let them appear earlier or later). This can also be percentage based by adding a '%' at the end
+	    invertBottomOffset: true, // Add the offset as a negative number to the element's bottom
+	    repeat: false, // Add the possibility to remove the class if the elements are not visible
+	    callbackFunction: function(elem, action){}, // Callback to do after a class was added to an element. Action will return "add" or "remove", depending if the class was added or removed
+		scrollHorizontal: false // Set to true if your website scrolls horizontal instead of vertical.
+	});
+});
+</script>
+<%if back %>
+<header class="header small animated fadeIn">
+	<a class="logoBlock animated bounceIn">
+		<div class="ico"></div>
+		<div class="smallTxt">строительство и пиломатериалы</div>
+		<div class="bigTxt">паритетск.рф</div>
+		<div class="line"></div>
+	</a>
+</header>
+<% else %>
+<header class="header animated fadeIn">
+	<a class="logoBlock animated bounceIn">
+		<div class="ico"></div>
+		<div class="smallTxt">строительство и пиломатериалы</div>
+		<div class="bigTxt">паритетск.рф</div>
+		<div class="line"></div>
+	</a>
+	<div class="buttons animated fadeInUp">
+		<a href="/pages/catalog" class="buttonA">Каталог</a>
+		<a href="/pages/works" class="buttonB">Проекты</a>
+	</div>
+	<div class="down" onclick="return pageTo('uslugi');"></div>
+</header>
+<% end %>

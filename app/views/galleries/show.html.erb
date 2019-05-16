@@ -1,0 +1,24 @@
+<%= render partial: 'application/header', locals: {back: true}%>
+<section class="uslugi" id="uslugi">
+  <div class="content">
+
+<p id="notice"><%= notice %></p>
+
+    <h2><%= @gallery.title %></h2>
+    <p><%= @gallery.description %></p>
+
+<p>
+  <strong>Цена:</strong>
+  <%= @gallery.slave %>
+</p>
+<p>
+  <strong>Характеристики:</strong>
+  <%= @gallery.url %>
+</p>
+
+<p><strong>Фото:</strong></p>
+    <img src="<%= @gallery.image %>"/>
+
+</div>
+</section>
+<%= render partial: 'application/footer', locals: {back: true}%>

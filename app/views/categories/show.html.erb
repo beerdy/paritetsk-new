@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @category.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @category.description %>
+</p>
+
+<p>
+  <strong>Slave:</strong>
+  <%= @category.slave %>
+</p>
+
+<p>
+  <strong>Image1 uid:</strong>
+  <%= @category.image1_uid %>
+</p>
+
+<p>
+  <strong>Image1 name:</strong>
+  <%= @category.image1_name %>
+</p>
+
+<p>
+  <strong>Image2 uid:</strong>
+  <%= @category.image2_uid %>
+</p>
+
+<p>
+  <strong>Image2 name:</strong>
+  <%= @category.image2_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @category.url %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @category.sort %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

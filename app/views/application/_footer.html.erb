@@ -1,0 +1,16 @@
+<footer class="footer">
+Все права защищены (с) паритетск.рф
+</footer>
+<%if back %>
+	<nav class="generalMenu animated fadeInDown">
+		<a href="/" class="iteam">Назад</a>
+	</nav>
+<% else %>
+	<nav class="generalMenu animated fadeInDown">
+		<a href="" class="iteam" onclick="return pageTo('home');">Главная</a>
+		<a href="" class="iteam" onclick="return pageTo('uslugi');">Каталог</a>
+		<a href="" class="iteam" onclick="return pageTo('about');">О нас</a>
+		<a href="" class="iteam" onclick="return pageTo('projects');">Проекты</a>
+		<a href="" class="iteam"onclick="return pageTo('contacts');">Контакты</a>
+	</nav>
+<% end %>

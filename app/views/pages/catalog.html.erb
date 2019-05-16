@@ -1,0 +1,26 @@
+<%= render partial: 'application/header', locals: {back: true}%>
+<section class="uslugi" id="uslugi">
+	<div class="content">
+		<h1>КАТАЛОГ УСЛУГ</h1>
+		<p>Мы реализуем весь спектр услуг: от предоставления качественных пиломатериалов до разработки и создания готового проекта (будь то коттедж, баня, бассейн) </p>
+		<% Category.all.each do |category| %>
+		<h2><%= category.title %></h3>
+		<div class="iteams">
+			<% category.products.each do |product| %>
+			<div class="iteam">
+				<div class="img">
+					<div class="ico id<%= category.id %>"></div>
+					<div class="price">от <%= product.slave %></div>
+					<% product.pictures.each do |picture| %>
+					    <%= image_tag picture.image.url(:thumb) %>
+					<% end %>
+				</div>
+				<div class="title"><%= product.title %></div>
+				<div class="description"><%= link_to 'Подробнее', product %></div>
+			</div>
+		    <% end %>
+		</div>
+		<% end %>
+	</div>
+</section>
+<%= render partial: 'application/footer', locals: {back: true}%>

@@ -1,0 +1,27 @@
+<%= render partial: 'application/header', locals: {back: true}%>
+<section class="uslugi" id="uslugi">
+  <div class="content">
+    <h2><%= @product.title %></h2>
+    <p><%= @product.description %></p>
+
+<p>
+  <strong>Цена:</strong>
+  <%= @product.slave %>
+</p>
+
+<p>
+  <strong>Характеристики:</strong>
+  <%= @product.image1_uid %>
+</p>
+
+<p id="notice"><%= notice %></p>
+
+
+<p><strong>Фото:</strong></p>
+  <% @product.pictures.each do |picture| %>
+    <%= image_tag picture.image.url(:thumb) %>
+  <% end %>
+
+  </div>
+</section>
+<%= render partial: 'application/footer', locals: {back: true}%>

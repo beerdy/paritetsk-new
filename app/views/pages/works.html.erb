@@ -1,0 +1,25 @@
+<%= render partial: 'application/header', locals: {back: true}%>
+<section class="uslugi" id="uslugi">
+  <div class="content">
+    <h1>ПРОЕКТЫ</h1>
+    <p>Доска обрезная, брус, рейка доска необрезная, изготавливаем по размерам заказчика. Работаем по Липецку, Воронежу, Тамбову и другим городам Центрального Черноземья</p>
+
+    <% Category.where(id:[1]).each do |category| %>
+    <h3><%= category.title %></h3>
+    <div class="iteams">
+       <% category.galleries.limit(3).each do |gallery| %>
+      <div class="iteam">
+        <div class="img">
+          <div class="ico arbor"></div>
+          <div class="price">от 7 000руб.</div>
+          <%= image_tag gallery.image.url %>
+        </div>
+        <div class="title"><%= gallery.title %></div>
+        <div class="description"><%= link_to 'Подробнее', gallery %></div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</section>
+<%= render partial: 'application/footer', locals: {back: true}%>
