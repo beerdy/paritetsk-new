@@ -1,3 +1,4 @@
+<% content_for :title, @gallery.title %>
 <%= render partial: 'application/header', locals: {back: true}%>
 <section class="uslugi" id="uslugi">
   <div class="content">
@@ -17,7 +18,8 @@
 </p>
 
 <p><strong>Фото:</strong></p>
-    <img src="<%= @gallery.image %>"/>
+    <%= image_tag @gallery.image.url %>
+
 
 </div>
 </section>
