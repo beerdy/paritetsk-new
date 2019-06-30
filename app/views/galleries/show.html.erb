@@ -6,7 +6,7 @@
 <p id="notice"><%= notice %></p>
 
     <h2><%= @gallery.title %></h2>
-    <p><%= @gallery.description %></p>
+    <p><%= @gallery.description.html_safe %></p>
 
 <p>
   <strong>Цена:</strong>
@@ -14,7 +14,7 @@
 </p>
 <p>
   <strong>Характеристики:</strong>
-  <%= @gallery.url %>
+  <%= @gallery.url.html_safe %>
 </p>
 
 <p><strong>Фото:</strong></p>
