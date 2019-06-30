@@ -8,11 +8,11 @@
     <% Category.where(id:[1]).each do |category| %>
     <h3><%= category.title %></h3>
     <div class="iteams">
-       <% category.galleries.limit(3).each do |gallery| %>
+       <% category.galleries.each do |gallery| %>
       <div class="iteam">
         <div class="img">
           <div class="ico arbor"></div>
-          <div class="price">от 7 000руб.</div>
+          <div class="price">от <%= gallery.slave %></div>
           <%= image_tag gallery.image.url %>
         </div>
         <div class="title"><%= gallery.title %></div>
