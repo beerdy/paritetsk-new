@@ -39,7 +39,7 @@ gem 'dropzonejs-rails'
 gem "paperclip"
 gem 'devise'
 gem "cancan"
-gem 'rails_admin', '~> 1.3'
+gem 'rails_admin', '~> 1.4'
 gem 'ckeditor'
 
 
